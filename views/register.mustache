@@ -1,14 +1,23 @@
-<h1> Register</h1>
+<html>
 
-<form>
-<input type='text' name='username' placeholder='Username' required/>
-<input type='text' name='password' placeholder='Password' required/>
-<input type='text' name='confirmPassword' placeholder='Confirm Password' required/>
-<button> Sign Up </button>
-</form>
+    <head>
+    </head>
 
-{{message}}
+    <body>  
+    <h1> Register</h1>
+
+        <form method="POST" action="/register">
+        <input type='text' name='username' placeholder='Username' required/>
+        <input type='password' name='password' placeholder='Password' required/>
+        <input type='password' name='confirmPassword' placeholder='Confirm Password' required/>
+        <button> Sign Up </button>
+        </form>
+
+        {{message}}
 
 
-<label>Already Have An Account?</label>
-<a href='/login'><button>Log In</button></a>
+        <label>Already Have An Account?</label>
+        <a href='/login'><button>Log In</button></a>
+
+    </body>
+</html>
