@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   Project.init({
     name: DataTypes.STRING,
     description: DataTypes.TEXT,
-    status: DataTypes.STRING
+    status: DataTypes.STRING,
+    user_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Project',

@@ -6,6 +6,7 @@ var bcrypt = require('bcryptjs')
 require('dotenv').config()
 const PORT = process.env.PORT_NUMBER
 const session = require('express-session')
+const project = require('./models/project')
 
 app.use(express.urlencoded())
 app.engine('mustache', mustacheExpress())
@@ -44,7 +45,20 @@ app.post('/project-details' ,(req, res) => {
     const projectDescription = req.body.projectDescription
     // Keep name consistent
     const projectStatus = "Plan to do"
-    const userId = req.session.username
+    const userId = parseInt(req.session.username)
+    console.log(userId)
+
+    let newProject = models.Project.build({
+        name: projectName,
+        description: projectDescription,
+        status: projectStatus,
+        user_id: userId 
+    })
+    newProject.save().then(()=> {
+        let project_id = newProject.dataValues.id.toString()
+        let url = '/project-details/' + project_id
+        res.redirect(url)
+    })
 
 
 
