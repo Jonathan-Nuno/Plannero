@@ -11,6 +11,7 @@ app.use(express.urlencoded())
 app.engine('mustache', mustacheExpress())
 app.set('views', './views')
 app.set('view engine', 'mustache')
+app.use(express.static('views'))
 
 app.use(session({
     secret: process.env.SESSION_ID,
@@ -34,34 +35,59 @@ app.get('/profile', (req, res) => {
     res.render('profile')
 })
 
+app.get('/create-project', (req, res) =>{
+    res.render('create-project')
+})
+
+app.post('/project-details' ,(req, res) => {
+    const projectName = req.body.projectName
+    const projectDescription = req.body.projectDescription
+    // Keep name consistent
+    const projectStatus = "Plan to do"
+    const userId = req.session.username
+
+
+
+})
+
 app.post('/register', (req, res) => {
     const username = req.body.username.toLowerCase()
     const password = req.body.password
     const confirmPassword = req.body.confirmPassword
-
-    if (password == confirmPassword) {
-        bcrypt.genSalt(10, function (err, salt) {
-            bcrypt.hash(password, salt, function (err, hash) {
-                let user = models.User.build({
-                    username: username,
-                    password: hash,
-                })
-                user.save().then((savedUser) => {
-                    res.redirect('login')
-                })
-            })
+    models.User.findAll({
+        where: { username: username }
+    }).then((users) => {
+        const persistedUser = users.find(user => {
+            return user.username == username
         })
-    } else {
-        res.render('register', { message: 'Passwords do not match'})
-    }
+        if (persistedUser) {
+            res.render('register', { message: 'Username already exists' })
+        } else {
+            if (password == confirmPassword) {
+                bcrypt.genSalt(10, function (err, salt) {
+                    bcrypt.hash(password, salt, function (err, hash) {
+                        let user = models.User.build({
+                            username: username,
+                            password: hash,
+                        })
+                        user.save().then(() => {
+                            res.redirect('login')
+                        })
+                    })
+                })
+            } else {
+                res.render('register', { message: 'Passwords do not match' })
+            }
+        }
+    })
 })
 
-app.post('/login', (req,res) => {
+app.post('/login', (req, res) => {
     const username = req.body.username.toLowerCase()
     const password = req.body.password
     models.User.findAll({
-        where: {username: username}
-    }).then((users)=>{
+        where: { username: username }
+    }).then((users) => {
         const persistedUser = users.find(user => {
             return user.username == username
         })
@@ -72,13 +98,13 @@ app.post('/login', (req,res) => {
                     console.log(req.session.username)
                     res.redirect('/profile')
                 }
-                else{
-                    res.render('login',{message: 'Password do not match'})
+                else {
+                    res.render('login', { message: 'Password do not match' })
                 }
             })
         }
-        else{
-            res.render('login',{message: 'Username does not exist'})
+        else {
+            res.render('login', { message: 'Username does not exist' })
         }
     })
 })
