@@ -45,7 +45,7 @@ app.post('/project-details' ,(req, res) => {
     const projectDescription = req.body.projectDescription
     // Keep name consistent
     const projectStatus = "Plan to do"
-    const userId = parseInt(req.session.username)
+    const userId = req.session.username
     console.log(userId)
 
     let newProject = models.Project.build({
