@@ -6,7 +6,8 @@ var bcrypt = require('bcryptjs')
 require('dotenv').config()
 const PORT = process.env.PORT_NUMBER
 const session = require('express-session')
-const project = require('./models/project')
+//const project = require('./models/project')
+const profileRouter = require('./routes/profile')
 
 app.use(express.urlencoded())
 app.engine('mustache', mustacheExpress())
@@ -19,7 +20,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }))
-
+app.use('/profile', authenticate, profileRouter)
 app.get('/', (req, res) => {
     res.render('index')
 })
@@ -32,37 +33,14 @@ app.get('/register', (req, res) => {
     res.render('register')
 })
 
-app.get('/profile', (req, res) => {
-    res.render('profile')
-})
-
-app.get('/create-project', (req, res) =>{
-    res.render('create-project')
-})
-
-app.post('/project-details' ,(req, res) => {
-    const projectName = req.body.projectName
-    const projectDescription = req.body.projectDescription
-    // Keep name consistent
-    const projectStatus = "Plan to do"
-    const userId = req.session.username
-    console.log(userId)
-
-    let newProject = models.Project.build({
-        name: projectName,
-        description: projectDescription,
-        status: projectStatus,
-        user_id: userId 
-    })
-    newProject.save().then(()=> {
-        let project_id = newProject.dataValues.id.toString()
-        let url = '/project-details/' + project_id
-        res.redirect(url)
-    })
 
 
 
-})
+
+
+
+
+
 
 app.post('/register', (req, res) => {
     const username = req.body.username.toLowerCase()
@@ -122,6 +100,20 @@ app.post('/login', (req, res) => {
         }
     })
 })
+
+function authenticate(req,res, next) {
+    if (req.session) {
+        if(req.session.username) {
+            next()
+        } else {
+            res.redirect('/')
+        }
+    }else{
+        res.redirect('/')
+    }
+
+}
+
 
 
 app.listen(PORT, () => {
