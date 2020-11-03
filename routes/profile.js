@@ -41,7 +41,7 @@ router.post('/project-details' ,(req, res) => {
     })
     newProject.save().then(()=> {
         let project_id = newProject.dataValues.id.toString()
-        let url = '/project-details/' + project_id
+        let url = './project-details/' + project_id
         res.redirect(url)
     })
 })
