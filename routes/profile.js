@@ -2,22 +2,23 @@ const express = require('express')
 const router = express.Router()
 const models = require('../models')
 
+router.get('/', (req, res) => {
+    models.Project.findAll({
+        where: {user_id: req.session.username}
+    }).then((projects) => {
+        let completedProjects = projects.filter((project) =>{
+            return project.dataValues.status == 'Completed'
+        })
+        let workingOnProjects = projects.filter((project) =>{
+            return project.dataValues.status == 'Working on'
+        })
+        let planToDoProjects = projects.filter((project) =>{
+            return project.dataValues.status == 'Plan to do'
+        })
 
-
-router.get('/', async (req, res) => {
-    let projectCompleted = await projectState(req, 'Completed')
-    console.log(projectCompleted)
-    res.render('profile', { projectCompleted: projectCompleted })
+        res.render('profile', {completedProjects: completedProjects, workingOnProjects: workingOnProjects, planToDoProjects: planToDoProjects})
+    })
 })
-
-// router.get('/', (req, res) => {
-//     models.Project.findAll({
-//         where: {status: 'Completed', user_id: req.session.username}
-//     }).then((project) => {
-//         console.log(project)
-//         res.render('profile', {project: project})
-//     })
-// })
 
 router.get('/create-project', (req, res) => {
     res.render('create-project')
@@ -33,9 +34,19 @@ router.get('/project-details/:projectId', (req, res) => {
     })
 })
 
+router.get('/categories', (req, res) => {
+        res.render('categories')
+})
 
+router.post('/categories/:statusCat', (req, res) => {
+    const statusCat = req.params.statusCat
 
-
+    models.Project.findAll({
+        where: {status: statusCat, user_id: req.session.username}
+    }).then((projects) => {
+        res.redirect('/categories', { projects: projects })
+    })
+})
 
 router.post('/project-details', (req, res) => {
     const projectName = req.body.projectName
@@ -58,14 +69,12 @@ router.post('/project-details', (req, res) => {
     })
 })
 
-function projectState(req, state) {
-    models.Project.findAll({
-        where: { status: state, user_id: req.session.username }
-    }).then((project) => {
-        return project
+function projectsFilter(projects, status) {
+    projects.filter((project) =>{
+        return project.dataValues.status == status
     })
-    
 }
+
 
 
 module.exports = router

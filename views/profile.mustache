@@ -18,11 +18,37 @@
 
    
     <ul>
-        {{#projectCompleted}}
+        <h2> Completed Projects </h2>
+        {{#completedProjects}}
         <li>
         {{name}} - {{description}} - {{status}}
         </li>
-        {{/projectCompleted}}
+        {{/completedProjects}}
+
+        <form method="POST" action="profile/categories/Completed" >
+        <button>Show all</button>
+        </form>
+
+        <h2> Working on </h2>
+        {{#workingOnProjects}}
+        <li>
+        {{name}} - {{description}} - {{status}}
+        </li>
+        {{/workingOnProjects}}
+        <form method="GET" action="/categories/workingOn">
+        <button>Show all</button>
+        </form>
+
+        <h2> Plan to do </h2>
+        {{#planToDoProjects}}
+        <li>
+        {{name}} - {{description}} - {{status}}
+        </li>
+        {{/planToDoProjects}}
+        <form method="GET" action="/categories/planToDo">
+        <button>Show all</button>
+        </form>
+
     </ul>
 
 
