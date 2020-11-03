@@ -4,9 +4,27 @@
     </head>
 
     <body>
+    
+    <header>
+    <form method="POST" action="/logout">
+    <button>Logout</button>
+    </form>
+    </header>
+
     <h1>Profile Page</h1>
     <img src="images/defaultUserIcon.jpeg">
     <a href="/profile/create-project"><button>Create Project</button></a>
     </body>
+
+   
+    <ul>
+        {{#projectCompleted}}
+        <li>
+        {{name}} - {{description}} - {{status}}
+        </li>
+        {{/projectCompleted}}
+    </ul>
+
+
 
 </html>

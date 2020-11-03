@@ -34,14 +34,6 @@ app.get('/register', (req, res) => {
 })
 
 
-
-
-
-
-
-
-
-
 app.post('/register', (req, res) => {
     const username = req.body.username.toLowerCase()
     const password = req.body.password
@@ -101,14 +93,21 @@ app.post('/login', (req, res) => {
     })
 })
 
-function authenticate(req,res, next) {
+
+app.post('/logout', (req, res) => {
+    req.session.destroy(err => {
+        res.redirect('/')
+    })
+})
+
+function authenticate(req, res, next) {
     if (req.session) {
-        if(req.session.username) {
+        if (req.session.username) {
             next()
         } else {
             res.redirect('/')
         }
-    }else{
+    } else {
         res.redirect('/')
     }
 
