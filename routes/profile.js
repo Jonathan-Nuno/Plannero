@@ -10,10 +10,10 @@ router.get('/', (req, res) => {
             return project.dataValues.status == 'Completed'
         })
         let workingOnProjects = projects.filter((project) =>{
-            return project.dataValues.status == 'Working on'
+            return project.dataValues.status == 'Working_on'
         })
         let planToDoProjects = projects.filter((project) =>{
-            return project.dataValues.status == 'Plan to do'
+            return project.dataValues.status == 'Plan_to_do'
         })
 
         res.render('profile', {completedProjects: completedProjects, workingOnProjects: workingOnProjects, planToDoProjects: planToDoProjects})
@@ -26,7 +26,6 @@ router.get('/create-project', (req, res) => {
 
 router.get('/project-details/:projectId', (req, res) => {
     const projectId = req.params.projectId
-
     models.Project.findAll({
         where: { id: projectId }
     }).then((project) => {
@@ -40,19 +39,18 @@ router.get('/categories', (req, res) => {
 
 router.post('/categories/:statusCat', (req, res) => {
     const statusCat = req.params.statusCat
-
+    const spaceCat = statusCat.replace(/_/g, " ")
     models.Project.findAll({
         where: {status: statusCat, user_id: req.session.username}
     }).then((projects) => {
-        res.redirect('/categories', { projects: projects })
+        res.render('categories', { projects: projects, spaceCat: spaceCat })
     })
 })
 
 router.post('/project-details', (req, res) => {
     const projectName = req.body.projectName
     const projectDescription = req.body.projectDescription
-    // Keep name consistent
-    const projectStatus = "Plan to do"
+    const projectStatus = "Plan_to_do"
     const userId = req.session.username
     console.log(userId)
 
@@ -69,11 +67,11 @@ router.post('/project-details', (req, res) => {
     })
 })
 
-function projectsFilter(projects, status) {
-    projects.filter((project) =>{
-        return project.dataValues.status == status
-    })
-}
+// function projectsFilter(projects, status) {
+//     projects.filter((project) =>{
+//         return project.dataValues.status == status
+//     })
+// }
 
 
 

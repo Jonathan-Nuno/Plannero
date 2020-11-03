@@ -35,7 +35,8 @@
         {{name}} - {{description}} - {{status}}
         </li>
         {{/workingOnProjects}}
-        <form method="GET" action="/categories/workingOn">
+        
+        <form method="POST" action="profile/categories/Working_on">
         <button>Show all</button>
         </form>
 
@@ -45,7 +46,7 @@
         {{name}} - {{description}} - {{status}}
         </li>
         {{/planToDoProjects}}
-        <form method="GET" action="/categories/planToDo">
+        <form method="POST" action="profile/categories/Plan_to_do">
         <button>Show all</button>
         </form>
 
