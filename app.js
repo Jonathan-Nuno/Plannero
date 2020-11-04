@@ -84,7 +84,7 @@ app.post('/login', (req, res) => {
                     res.redirect('/profile')
                 }
                 else {
-                    res.render('login', { message: 'Password do not match' })
+                    res.render('login', { message: 'Password does not match' })
                 }
             })
         }
