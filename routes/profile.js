@@ -50,9 +50,9 @@ router.post('/categories/:statusCat', (req, res) => {
 router.post('/project-details', (req, res) => {
     const projectName = req.body.projectName
     const projectDescription = req.body.projectDescription
-    const projectStatus = "Plan_to_do"
+    const projectStatus = req.body.projectStatus
     const userId = req.session.username
-    console.log(userId)
+    
 
     let newProject = models.Project.build({
         name: projectName,
@@ -62,7 +62,7 @@ router.post('/project-details', (req, res) => {
     })
     newProject.save().then(() => {
         let project_id = newProject.dataValues.id.toString()
-        let url = './project-details/' + project_id
+        let url = '/profile/project-details/' + project_id
         res.redirect(url)
     })
 })
@@ -86,7 +86,9 @@ router.post('/update-project',(req,res) => {
     models.Project.findAll({
         where: {id: projectId}
     }).then((project) => {
-        res.render('update-project', {project: project})
+        const projectStatus = project[0].dataValues.status
+        const statusText = projectStatus.replace(/_/g, " ")
+        res.render('update-project', {project: project, statusText: statusText})
     })
 })
 
@@ -95,10 +97,12 @@ router.post('/update-project/confirm',(req,res) => {
     const projectId = req.body.projectId
     const projectName = req.body.projectName
     const projectDescription = req.body.projectDescription
+    const projectStatus = req.body.projectStatus
     const url = '/profile/project-details/' + projectId.toString()
     models.Project.update({
         name: projectName, 
-        body: projectDescription
+        description: projectDescription,
+        status: projectStatus
     },{
         where: {
             id: projectId 
