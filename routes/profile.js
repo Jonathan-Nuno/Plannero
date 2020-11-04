@@ -67,11 +67,46 @@ router.post('/project-details', (req, res) => {
     })
 })
 
-// function projectsFilter(projects, status) {
-//     projects.filter((project) =>{
-//         return project.dataValues.status == status
-//     })
-// }
+router.post('/delete-project',(req,res) => {
+
+    const projectId = req.body.projectId 
+    models.Project.destroy({
+        where: {
+            id: projectId
+        }
+    }).then(deletedProject => {
+        console.log(deletedProject)
+        res.redirect('/profile') 
+    })
+})
+
+router.post('/update-project',(req,res) => {
+    
+    const projectId = req.body.projectId
+    models.Project.findAll({
+        where: {id: projectId}
+    }).then((project) => {
+        res.render('update-project', {project: project})
+    })
+})
+
+router.post('/update-project/confirm',(req,res) => {
+    
+    const projectId = req.body.projectId
+    const projectName = req.body.projectName
+    const projectDescription = req.body.projectDescription
+    const url = '/profile/project-details/' + projectId.toString()
+    models.Project.update({
+        name: projectName, 
+        body: projectDescription
+    },{
+        where: {
+            id: projectId 
+        }
+    }).then((project) => {
+        res.redirect(url)
+    })
+})
 
 
 
