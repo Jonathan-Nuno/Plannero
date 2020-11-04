@@ -21,6 +21,7 @@ app.use(session({
     saveUninitialized: true
 }))
 app.use('/profile', authenticate, profileRouter)
+
 app.get('/', (req, res) => {
     res.render('index')
 })
