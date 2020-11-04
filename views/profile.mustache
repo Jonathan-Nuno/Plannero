@@ -1,6 +1,9 @@
 <html>
 
     <head>
+
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
     </head>
 
     <body>
@@ -16,41 +19,66 @@
     <a href="/profile/create-project"><button>Create Project</button></a>
     </body>
 
-   
-    <ul>
-        <h2> Completed Projects </h2>
-        {{#completedProjects}}
-        <li>
-        {{name}} - {{description}} - {{status}}
-        </li>
-        {{/completedProjects}}
 
-        <form method="POST" action="profile/categories/Completed" >
-        <button>Show all</button>
-        </form>
+        <div>
+            <h2> Completed Projects </h2>
 
-        <h2> Working on </h2>
-        {{#workingOnProjects}}
-        <li>
-        {{name}} - {{description}} - {{status}}
-        </li>
-        {{/workingOnProjects}}
-        
-        <form method="POST" action="profile/categories/Working_on">
-        <button>Show all</button>
-        </form>
+            <div class="content">
+                <ul>
+                    {{#completedProjects}}
+                    <div class="card">
+                    <h3>{{name}}</h3>
+                    
+                    <p>{{description}}</p>
+                    </div>
+                    {{/completedProjects}}
+                </ul>
+            </div>
 
-        <h2> Plan to do </h2>
-        {{#planToDoProjects}}
-        <li>
-        {{name}} - {{description}} - {{status}}
-        </li>
-        {{/planToDoProjects}}
-        <form method="POST" action="profile/categories/Plan_to_do">
-        <button>Show all</button>
-        </form>
+            <form method="POST" action="profile/categories/Completed" >
+            <button>Show all</button>
+            </form>
+        </div>
 
-    </ul>
+        <div>
+            <h2> Working on </h2>
+
+            <div class="content">
+                <ul>
+                    {{#workingOnProjects}}
+                    <div class="card">
+                    <h3>{{name}}</h3>
+                    
+                    <p>{{description}}</p>
+                    </div>
+                    {{/workingOnProjects}}
+                </ul>
+            </div>
+            
+            <form method="POST" action="profile/categories/Working_on">
+            <button>Show all</button>
+            </form>
+        </div>
+
+        <div>
+            <h2> Plan to do </h2>
+            <div class="content">
+                <ul>
+                    {{#planToDoProjects}}
+                    <div class="card">
+                    <h3>{{name}}</h3>
+                    
+                    <p>{{description}}</p>
+                    </div>
+                    {{/planToDoProjects}}
+                </ul>
+            </div>
+            
+            <form method="POST" action="profile/categories/Plan_to_do">
+            <button>Show all</button>
+            </form>
+        </div>
+ 
 
 
 
