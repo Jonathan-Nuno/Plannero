@@ -3,6 +3,23 @@
 {{#project}}
 
 {{name}}
-{{user_id}}
+{{description}}
+{{status}}
+
+
+<form method="POST" action="../update-project">
+ <input type="hidden" value={{id}} name="projectId" />
+ <p> </p>
+ <button>Update</button>
+</form>
+
+<form method="POST" action="../delete-project">
+ <input type="hidden" value={{id}} name="projectId" />
+ <p> </p>
+ <button onclick="if (!confirm('Are you sure you want to delete this project?')) { return false }">Delete</button>
+</form>
 
 {{/project}}
+
+<a href='/profile'>Profile</a>
+
