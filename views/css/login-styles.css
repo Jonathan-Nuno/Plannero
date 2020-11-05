@@ -9,6 +9,10 @@
     src: url('AvenirLTStd-Roman.otf') format('truetype');
 }
 
+button {
+    cursor: pointer;
+}
+
 body {
     background-color: rgb(1, 77, 128);
     display: flex;
@@ -89,6 +93,10 @@ input {
 
 }
 
+#loginButton:hover {
+    background-color: rgb(18, 133, 199);
+}
+
 hr {
     width: 100%;
     height: 1px;
@@ -109,6 +117,11 @@ hr {
     padding: 10px 20px;
     font-family: Avenir;
     font-size: 20px;
+}
+
+#registerButton:hover {
+    background-color: rgb(74, 160, 46);
+
 }
 
 .registerButton {
