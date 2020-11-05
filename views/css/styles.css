@@ -33,6 +33,31 @@ button {
     width: 580px;
     text-align: center;
 }
+.singleDetailContent, .singleTitle {
+    display: grid;
+    place-items: center;
+    width: 75%;
+}
+.formDetail {
+    display: grid;
+    place-items: center;
+}
+.ulDetail {
+    display: grid;
+    list-style-type: none;
+    width: 100%;
+}
+.singleButton {
+    width: 25%;
+}
+.labelDetail {
+    display: grid;
+    grid-auto-flow: column;
+}
+.pDetails {
+    margin: 0px;
+    width: 130px;
+}
 div.card {
     width: 100px;
     height: 100px;
@@ -51,6 +76,10 @@ ul {
     height: 134px;
     width: 134px;
     margin: 3px;
+}
+.profilePText {
+    max-width: 100px;
+    overflow: hidden;
 }
 .projectDetails:link {
     text-decoration: none;
@@ -72,4 +101,8 @@ h3 {
     max-width: 110px;
     overflow: hidden;
     margin: 1px;
+}
+textarea {
+    width: 180px;
+    height: 100px;
 }
