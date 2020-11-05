@@ -10,14 +10,20 @@
             <p>keeping you on track</p>
         </div>
 
-        <form method="POST" action="/login">
-            <input type='text' name='username' placeholder='Email or username' required/>
-            <input type='password' name='password' placeholder='Password' required/>
-            <button id="loginButton">Log In</button>
+        <div id="container">
+            <div class="login">
+                <form method="POST" action="/login">
+                    <input type='text' name='username' placeholder='Email or username' required/>
+                    <input type='password' name='password' placeholder='Password' required/>
+                    <button id="loginButton">Log In</button>
+                </form>
+            </div>
             <hr>
-            <a href='/register'><button id="registerButton">Create New Account</button></a>
-        </form>
-
+            <div class='registerButton'>
+                <a href='/register'><button id="registerButton">Create New Account</button></a>
+                <a href='/login-guest' id='guest'>Log In as Guest</a>
+            </div>
+        </div>
     </body>
 
 </html>
