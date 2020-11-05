@@ -8,6 +8,7 @@ const PORT = process.env.PORT_NUMBER
 const session = require('express-session')
 //const project = require('./models/project')
 const profileRouter = require('./routes/profile')
+const Str = require('@supercharge/strings')
 
 app.use(express.urlencoded())
 app.engine('mustache', mustacheExpress())
@@ -22,9 +23,6 @@ app.use(session({
 }))
 app.use('/profile', authenticate, profileRouter)
 
-app.get('/', (req, res) => {
-    res.render('index')
-})
 
 app.get('/login', (req, res) => {
     res.render('login')
@@ -80,7 +78,6 @@ app.post('/login', (req, res) => {
             bcrypt.compare(password, persistedUser.password, function (err, result) {
                 if (result) {
                     req.session.username = persistedUser.dataValues.id
-                    console.log(req.session.username)
                     res.redirect('/profile')
                 }
                 else {
@@ -94,10 +91,34 @@ app.post('/login', (req, res) => {
     })
 })
 
+app.get('/login-guest', (req, res) => {
+    const username = Str.random(25)
+    models.User.findAll({
+        where: { username: username }
+    }).then((users) => {
+        const persistedUser = users.find(user => {
+            return user.username == username
+        })
+        if (persistedUser) {
+                    res.redirect('/login-guest')
+                }
+        else {
+            let user = models.User.build({
+                username: username
+            })
+            user.save().then(() => {
+                req.session.username = user.id
+                console.log(req.session.username)
+                res.redirect('/profile')
+            })
+        }
+    })
+})
+
 
 app.post('/logout', (req, res) => {
     req.session.destroy(err => {
-        res.redirect('/')
+        res.redirect('/login')
     })
 })
 
@@ -106,10 +127,10 @@ function authenticate(req, res, next) {
         if (req.session.username) {
             next()
         } else {
-            res.redirect('/')
+            res.redirect('/login')
         }
     } else {
-        res.redirect('/')
+        res.redirect('/login')
     }
 
 }
