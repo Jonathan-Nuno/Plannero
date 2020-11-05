@@ -1,20 +1,20 @@
 
+@font-face {
+    font-family: Hanzipen;
+    src: url('hanzipen-tc-regular.otf');
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url('AvenirLTStd-Roman.otf') format('truetype');
+}
+
 body {
     background-color: rgb(1, 77, 128);
     display: flex;
     justify-content: center;
     padding-top: 10%;
 }
-
-@font-face {
-    font-family: Hanzipen;
-    src: url('hanzipen-tc-regular.otf');
-  }
-
-@font-face {
-    font-family: Avenir;
-    src: url('AvenirLTStd-Roman.otf') format('truetype');
-  }
 
 #planneroText {
     display: flex;
@@ -28,30 +28,39 @@ h1 {
     color: white;
     font-size: 100px;
     margin-bottom: 0;
+    margin-top: 40px;
+
 }
 
 p {
-    color: rgb(75, 180, 241);
+    color: rgb(117, 200, 255); 
     font-family: Avenir;
     font-size: 25px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 320px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    align-items: center;
+    /* margin-bottom: 40px; */
+    background-color: white;
+    padding: 30px 30px 0px 30px;
+}
+
+.login {
+    width: 100%;
+    margin: 0;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    width: 350px;
-    height: 350px;
-    /* border: grey;
-    border-style: solid; */
-    border-radius: 20px;
-    /* border-width: 1px; */
-    /* padding: 2%; */
-    justify-content: space-around;
     align-items: center;
-    margin: 0;
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
 }
 
 input {
@@ -61,16 +70,15 @@ input {
     border-style: solid;
     border-color: rgb(185, 180, 180);
     font-family: Avenir;
-    width: 90%;
+    width: 100%;
     font-size: 20px;
-
-
+    margin-bottom: 20px;
 }
 
 #loginButton {
     background-color: rgb(0, 162, 254);
     border-radius: 5px;
-    width: 90%;
+    width: 100%;
     color: white;
     text-align: center;
     padding: 10px;
@@ -82,14 +90,13 @@ input {
 }
 
 hr {
-    width: 90%;
+    width: 100%;
     height: 1px;
     margin-left: auto;
     margin-right: auto;
     background-color:rgb(175, 166, 166);
     border: 0 none;
-    /* margin-top: 5px; */
-    /* margin-bottom: 5px; */
+    margin-bottom: 25px;
 }
 
 
@@ -97,13 +104,27 @@ hr {
     background-color: rgb(96, 217, 55);
     border-radius: 5px;
     border: none;
-    /* width: 90%; */
     color: white;
     text-align: center;
-    padding: 10px 10px;
+    padding: 10px 20px;
     font-family: Avenir;
     font-size: 20px;
 }
+
+.registerButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#guest {
+    font-family: Avenir;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: rgb(32, 45, 216);
+}
+ 
+
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
 
@@ -111,40 +132,61 @@ hr {
         display: flex;
         flex-direction: column;
         align-items: center;
-        }
-
-    h1 {
-        margin-top: 2%;
-        font-size: 200px;
     }
 
+    #planneroText {
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 200px;
+    }
+ 
     p {
         font-size: 50px;
     }
 
-    form {
+    #container{
         width: 800px;
-        height: 800px;
+        height: 750px;
         margin-top: 5%;
-        margin-bottom: 10%;
+        margin-bottom: 30%;
+        padding: 40px 40px 0px 40px;
     }
 
+    .login {
+        justify-content: space-between;
+
+    }
+    
     input {
         font-size: 60px;
         border-radius: 10px;
         padding: 15px;
+        margin-bottom: 40px;
     }
 
     #loginButton {
         font-size: 60px;
         border-radius: 10px;
         padding: 15px;
+        margin: 0;
 
+    }
+
+    hr {
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
 
     #registerButton {
         font-size: 60px;
         border-radius: 10px;
         padding: 15px 20px;
+        margin: 20px;
+    } 
+
+    #guest {
+        font-size: 50px;
     }
 }
