@@ -6,9 +6,10 @@ var bcrypt = require('bcryptjs')
 require('dotenv').config()
 const PORT = process.env.PORT_NUMBER
 const session = require('express-session')
-//const project = require('./models/project')
 const profileRouter = require('./routes/profile')
 const Str = require('@supercharge/strings')
+
+
 
 app.use(express.urlencoded())
 app.engine('mustache', mustacheExpress())
@@ -44,7 +45,11 @@ app.post('/register', (req, res) => {
             return user.username == username
         })
         if (persistedUser) {
-            res.render('register', { message: 'Username already exists' })
+            // popups.alert({
+            //     content: 'Username already exists'
+            // })
+
+            res.render('register', { message: 0 })
         } else {
             if (password == confirmPassword) {
                 bcrypt.genSalt(10, function (err, salt) {
@@ -59,7 +64,7 @@ app.post('/register', (req, res) => {
                     })
                 })
             } else {
-                res.render('register', { message: 'Passwords do not match' })
+                res.render('register', { message: 1 })
             }
         }
     })
@@ -77,16 +82,17 @@ app.post('/login', (req, res) => {
         if (persistedUser) {
             bcrypt.compare(password, persistedUser.password, function (err, result) {
                 if (result) {
+                    req.session.name = req.body.username
                     req.session.username = persistedUser.dataValues.id
                     res.redirect('/profile')
                 }
                 else {
-                    res.render('login', { message: 'Password does not match' })
+                    res.render('login', { message: 0 })
                 }
             })
         }
         else {
-            res.render('login', { message: 'Username does not exist' })
+            res.render('login', { message: 1 })
         }
     })
 })
@@ -108,6 +114,7 @@ app.get('/login-guest', (req, res) => {
             })
             user.save().then(() => {
                 req.session.username = user.id
+                req.session.guest = true
                 console.log(req.session.username)
                 res.redirect('/profile')
             })

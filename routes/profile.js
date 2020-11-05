@@ -3,6 +3,11 @@ const router = express.Router()
 const models = require('../models')
 
 router.get('/', (req, res) => {
+    if (req.session.guest == true){
+        displayName = 'Guest'
+    } else{
+        displayName = req.session.name
+    }
     models.Project.findAll({
         where: {user_id: req.session.username}
     }).then((projects) => {
@@ -16,7 +21,7 @@ router.get('/', (req, res) => {
             return project.dataValues.status == 'Plan_to_do'
         })
 
-        res.render('profile', {completedProjects: completedProjects, workingOnProjects: workingOnProjects, planToDoProjects: planToDoProjects})
+        res.render('profile', {completedProjects: completedProjects, workingOnProjects: workingOnProjects, planToDoProjects: planToDoProjects, displayName:displayName})
     })
 })
 
@@ -75,7 +80,6 @@ router.post('/delete-project',(req,res) => {
             id: projectId
         }
     }).then(deletedProject => {
-        console.log(deletedProject)
         res.redirect('/profile') 
     })
 })

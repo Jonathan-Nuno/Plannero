@@ -4,7 +4,8 @@
         <link rel="stylesheet" href="./css/register-styles.css">
     </head>
 
-    <body>  
+    <body onload="if ({{message}} == 0) { return alert('Username already exists')} 
+                  else if ({{message}} == 1) { return alert('Passwords do not match')}">  
        
         <div id='planneroText'>
             <h1>plannero</h1>
@@ -22,6 +23,7 @@
             <hr>
             <a href='/login'><label id="loginButton">Already Have An Account?</label></a>
         </div>
+        
 
     </body>
 </html>
