@@ -1,25 +1,33 @@
 <html>
 
     <head>
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link rel="stylesheet" href="./css/profile-styles.css" />
 
-
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
     </head>
 
     <body>
     
-    <header>
-    <form method="POST" action="/logout">
-    <button>Logout</button>
-    </form>
-    </header>
+        <div id='header'>
+            
+            <div id='logo'>
+                <label id='mainText'>plannero</label>
+                <label id='subText'>keeping you on track</label>
+            </div>
+            
+            <form method="POST" action="/logout" id="logoutButtonForm">
+                <button id="logoutButton">Log Out</button>
+            </form>
+        </div>
+
 
    
-    <h1>Hello {{displayName}}</h1>
+    <h1>Hello, {{displayName}}!</h1>
     <a href="/profile/create-project"><button>Create Project</button></a>
  
 
-        <div>
+
+        <div id="completedDiv">
             <h2> Completed Projects </h2>
 
             <div class="content">
@@ -34,12 +42,12 @@
                 </ul>
             </div>
 
-            <form method="POST" action="profile/categories/Completed" >
-            <button>Show all</button>
+            <form method="POST" action="profile/categories/Completed" class='showallForm'>
+                <button class='showallButton'>Show all</button>
             </form>
         </div>
 
-        <div>
+        <div id ='workingonDiv'>
             <h2> Working on </h2>
 
             <div class="content">
@@ -54,12 +62,12 @@
                 </ul>
             </div>
             
-            <form method="POST" action="profile/categories/Working_on">
-            <button>Show all</button>
+            <form method="POST" action="profile/categories/Working_on" class='showallForm'>
+                <button class='showallButton'>Show all</button>
             </form>
         </div>
 
-        <div>
+        <div id='plantodoDiv'>
             <h2> Plan to do </h2>
             <div class="content">
                 <ul>
@@ -73,12 +81,14 @@
                 </ul>
             </div>
             
-            <form method="POST" action="profile/categories/Plan_to_do">
-            <button>Show all</button>
+            <form method="POST" action="profile/categories/Plan_to_do" class='showallForm'>
+                <button class='showallButton'>Show all</button>
             </form>
         </div>
-        <a href="/about-us">About Us</a>
- 
+
+       <footer>
+         <a href="/about-us">About Us</a>
+       </footer>
    </body>
 
 
