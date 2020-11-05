@@ -3,6 +3,9 @@ body {
     grid-template-rows: auto 1fr auto;
     place-items: center;
 }
+button {
+    cursor: pointer;
+}
 .content {
     display: flex;
     width: 500px;
