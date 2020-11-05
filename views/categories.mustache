@@ -1,13 +1,26 @@
-<h1>Hello you made it</h1>
+<html>
 
+        <head>
 
-        <h2> {{spaceCat}} </h2>
-        {{#projects}}
-        <li>
-        {{name}} - {{description}} - {{status}}
-        <a href='../project-details/{{id}}'> <button>Project Info</button></a>
- 
-        </li>
-        {{/projects}}
+          <link rel="stylesheet" type="text/css" href="/../../css/styles.css" />
+        </head>
 
-<a href='/profile'>Profile</a>
+        <body>
+                <div class="allMainContent">
+                        <h1> {{spaceCat}} </h1>
+                                
+                                <div class="allContent">
+                                        {{#projects}}
+                                        <a class="projectDetails" href= '/../../profile/project-details/{{id}}'><div class="card">
+                                        <h3>{{name}}</h3>
+                                        
+                                        <p>{{description}}</p>
+                                        </div></a>
+                                        {{/projects}}
+                                </div>
+
+                        <a href='/profile'>Profile</a>
+                </div>
+        </body>
+
+</html>
