@@ -20,8 +20,30 @@ div.card {
     padding: 1rem;
     border: 1px solid;
     margin: 5px;
+    place-items: center;
 }
 ul {
     display: flex;
     flex-direction: row;
+}
+.projectDetails:link {
+    text-decoration: none;
+    color: black;
+}
+.projectDetails:visited {
+    text-decoration: none;
+    color: black;
+}
+.projectDetails:hover {
+    text-decoration: underline;
+    color: black;
+}
+.projectDetails:active {
+    text-decoration: underline;
+    color: black;
+}
+h3 {
+    max-width: 110px;
+    overflow: hidden;
+    margin: 1px;
 }
