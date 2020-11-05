@@ -1,21 +1,37 @@
 <html>
     <head>
+
+        <link rel="stylesheet" type="text/css" href="/../css/styles.css" />
+
     </head>
 
     <body>
-            <h1>Enter Project Details</h1>
-            <form method="POST" action="./project-details">
-            <label>Project Name<input type="text" name="projectName" placeholder="Project Name" required ></label>
-            <label>Project Description<input type="text" name="projectDescription" placeholder="Project Description" required ></label>
-            
-            <label for="projectStatus">Choose a Status: </label>
-            <select name="projectStatus" id="projectStatus">
-            <option value="Plan_to_do">Plan To Do</option>
-            <option value="Working_on">Working On</option>
-            <option value="Completed">Completed</option>
-            </select>
-            <button>Submit</button>
-            </form>
+        <div class="singleDetailContent">
+            <h1 class="singleTitle">Enter Project Details</h1>
+
+            <div>
+                <form class="formDetail" method="POST" action="./project-details">
+                    <ul class="ulDetail">
+                        <label class="labelDetail">
+                            <p class="pDetails">Project Name: </p><input type="text" name="projectName" placeholder="Project Name" required >
+                        </label>
+
+                        <label class="labelDetail">
+                            <p class="pDetails">Project Description: </p><textarea type="text" name="projectDescription" placeholder="Project Description" required ></textarea>
+                        </label>
+
+                        <label class="labelDetail" for="projectStatus"><p class="pDetails">Choose a Status: </p>
+                            <select name="projectStatus" id="projectStatus">
+                            <option value="Plan_to_do">Plan To Do</option>
+                            <option value="Working_on">Working On</option>
+                            <option value="Completed">Completed</option>
+                            </select>
+                        </label>
+                    </ul>
+                    <button class="singleButton">Submit</button>
+                </form>
+            </div>
+        </div>
     </body>
 
 

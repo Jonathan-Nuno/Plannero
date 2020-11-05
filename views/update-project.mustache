@@ -1,25 +1,41 @@
 <html>
     <head>
+
+    <link rel="stylesheet" type="text/css" href="/../css/styles.css" />
     </head>
 
     <body>
-            {{#project}}
+        <div class="singleDetailContent">
             <h1>Update Project Details</h1>
-            <form method="POST" action="../profile/update-project/confirm">
-            <label>Project Name<input type="text" name="projectName" value="{{name}}" required ></label>
-            <label>Project Description<input type="text" name="projectDescription" value="{{description}}" required ></label>
-            <p> Current Status: {{statusText}} <p>
-            <label for="projectStatus">Choose a Status: </label>
-            <select name="projectStatus" id="projectStatus" value='{{status}}'>
-            <option value={{status}}>{{statusText}}</option>
-            <option value="Working_on">Working On</option>
-            <option value="Completed">Completed</option>
-            <option value="Plan_to_do">Plan To Do</option>
-            </select>
-            <input type="hidden" name="projectId" value="{{id}}">
-            <button>Submit</button>
-            </form>
-            {{/project}}
+            
+            <div>
+                {{#project}}
+                <form class="formDetail" method="POST" action="../profile/update-project/confirm">
+                    <ul class="ulDetail">
+                        <label class="labelDetail">
+                            <p class="pDetails">Project Name: </p><input type="text" name="projectName" value="{{name}}" required >
+                        </label>
+
+                        <label class="labelDetail">
+                            <p class="pDetails">Project Description: </p><textarea type="text" name="projectDescription" value="{{description}}" required >{{description}}</textarea>
+                        </label>
+
+                        <label class="labelDetail" for="projectStatus">
+                            <p class="pDetails">Project Status: </p>
+                            <select name="projectStatus" id="projectStatus">
+                            <option value={{status}} selected disabled hidden>{{statusText}}</option>
+                            <option value="Working_on">Working On</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Plan_to_do">Plan To Do</option>
+                            </select>
+                        </label>
+                        <input type="hidden" name="projectId" value="{{id}}">
+                    </ul>
+                    <button class="singleButton">Submit</button>
+                </form>
+                {{/project}}
+            </div>
+        </div>
     </body>
 
 

@@ -4,7 +4,8 @@
         <link rel="stylesheet" href="./css/login-styles.css">
     </head>
 
-    <body>  
+    <body onload="if ({{message}} == 0) { return alert('Password does not match')} 
+                  else if ({{message}} == 1) { return alert('Username does not exist')}">  
         <div id='planneroText'>
             <h1>plannero</h1>
             <p>keeping you on track</p>

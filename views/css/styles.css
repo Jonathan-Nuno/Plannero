@@ -1,11 +1,14 @@
 body {
+    background-color: rgb(1, 77, 128);
     display: grid;
     grid-template-rows: auto 1fr auto;
     place-items: center;
     background-color: rgb(1, 77, 128);
 
 }
-
+button {
+    cursor: pointer;
+}
 .content {
     display: flex;
     width: 700px;
@@ -20,6 +23,48 @@ body {
     background-color: white;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+}
+.allContent {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    border: 5px solid lightgray;
+    margin: 1%;
+    width: 100%;
+    padding: 5px;
+
+}
+.allMainContent {
+    display: grid;
+    place-content: center;
+    height: 700px;
+    width: 580px;
+    text-align: center;
+}
+.singleDetailContent, .singleTitle {
+    display: grid;
+    place-items: center;
+    width: 75%;
+}
+.formDetail {
+    display: grid;
+    place-items: center;
+}
+.ulDetail {
+    display: grid;
+    list-style-type: none;
+    width: 100%;
+}
+.singleButton {
+    width: 25%;
+}
+.labelDetail {
+    display: grid;
+    grid-auto-flow: column;
+}
+.pDetails {
+    margin: 0px;
+    width: 130px;
 }
 div.card {
     width: 100px;
@@ -43,11 +88,15 @@ ul {
     list-style-type: none;
     padding-left: 30px;
 }
-
-a.projectDetails {
+.projectDetails {
+    height: 134px;
+    width: 134px;
     margin-top: 10px;
 }
-
+.profilePText {
+    max-width: 100px;
+    overflow: hidden;
+}
 .projectDetails:link {
     text-decoration: none;
     color: black;
@@ -68,4 +117,8 @@ h3 {
     max-width: 110px;
     overflow: hidden;
     margin: 1px;
+}
+textarea {
+    width: 180px;
+    height: 100px;
 }
