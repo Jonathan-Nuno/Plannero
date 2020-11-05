@@ -25,6 +25,10 @@ app.use(session({
 app.use('/profile', authenticate, profileRouter)
 
 
+app.get('/', (req, res) => {
+    res.redirect('/profile')
+})
+
 app.get('/login', (req, res) => {
     res.render('login')
 })
@@ -33,6 +37,9 @@ app.get('/register', (req, res) => {
     res.render('register')
 })
 
+app.get('/about-us', (req, res) => {
+    res.render('about-us')
+})
 
 app.post('/register', (req, res) => {
     const username = req.body.username.toLowerCase()
