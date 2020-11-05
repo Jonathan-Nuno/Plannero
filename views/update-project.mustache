@@ -10,8 +10,8 @@
             <label>Project Description<input type="text" name="projectDescription" value="{{description}}" required ></label>
             <p> Current Status: {{statusText}} <p>
             <label for="projectStatus">Choose a Status: </label>
-            <select name="projectStatus" id="projectStatus" value='{{status}}'>
-            <option value={{status}}>{{statusText}}</option>
+            <select name="projectStatus" id="projectStatus">
+            <option value={{status}} selected disabled hidden>{{statusText}}</option>
             <option value="Working_on">Working On</option>
             <option value="Completed">Completed</option>
             <option value="Plan_to_do">Plan To Do</option>
