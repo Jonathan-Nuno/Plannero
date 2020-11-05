@@ -14,8 +14,8 @@
     </form>
     </header>
 
-    <h1>Profile Page</h1>
-    <img src="images/defaultUserIcon.jpeg">
+    {{! Hello User when user or Hello Gues when guest }}
+    <h1>Hello "User"</h1>
     <a href="/profile/create-project"><button>Create Project</button></a>
     </body>
 
@@ -26,11 +26,11 @@
             <div class="content">
                 <ul>
                     {{#completedProjects}}
-                    <div class="card">
+                    <a class="projectDetails" href= 'profile/project-details/{{id}}'><div class="card">
                     <h3>{{name}}</h3>
                     
                     <p>{{description}}</p>
-                    </div>
+                    </div></a>
                     {{/completedProjects}}
                 </ul>
             </div>
@@ -46,11 +46,11 @@
             <div class="content">
                 <ul>
                     {{#workingOnProjects}}
-                    <div class="card">
+                    <a class="projectDetails" href= 'profile/project-details/{{id}}'><div class="card">
                     <h3>{{name}}</h3>
                     
                     <p>{{description}}</p>
-                    </div>
+                    </div></a>
                     {{/workingOnProjects}}
                 </ul>
             </div>
@@ -65,11 +65,11 @@
             <div class="content">
                 <ul>
                     {{#planToDoProjects}}
-                    <div class="card">
-                    <h3>{{name}}</h3>
+                    <a class="projectDetails" href= 'profile/project-details/{{id}}'><div class="card">
+                   <h3>{{name}}</h3>
                     
                     <p>{{description}}</p>
-                    </div>
+                    </div></a>
                     {{/planToDoProjects}}
                 </ul>
             </div>
