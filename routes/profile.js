@@ -34,7 +34,9 @@ router.get('/project-details/:projectId', (req, res) => {
     models.Project.findAll({
         where: { id: projectId }
     }).then((project) => {
-        res.render('project-details', { project: project })
+        const projectStatus = project[0].dataValues.status
+        const statusText = projectStatus.replace(/_/g, " ")
+        res.render('project-details', { project: project, statusText: statusText })
     })
 })
 
