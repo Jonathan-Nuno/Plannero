@@ -52,10 +52,6 @@ app.post('/register', (req, res) => {
             return user.username == username
         })
         if (persistedUser) {
-            // popups.alert({
-            //     content: 'Username already exists'
-            // })
-
             res.render('register', { message: 0 })
         } else {
             if (password == confirmPassword) {
