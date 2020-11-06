@@ -1,25 +1,45 @@
-<h1>Project Details</h1>
-
-{{#project}}
-
-{{name}}
-{{description}}
-{{status}}
+<html>
 
 
-<form method="POST" action="../update-project">
- <input type="hidden" value={{id}} name="projectId" />
- <p> </p>
- <button>Update</button>
-</form>
+    <body>
 
-<form method="POST" action="../delete-project">
- <input type="hidden" value={{id}} name="projectId" />
- <p> </p>
- <button onclick="if (!confirm('Are you sure you want to delete this project?')) { return false }">Delete</button>
-</form>
+        <div id='header'>
+            
+            <div id='logo'>
+                <a href='/profile' class='profileAnchor'> <label id='mainText'>plannero</label></a>
+                <label id='subText'>keeping you on track</label>
+            </div>
+            
+            <form method="POST" action="/logout" id="logoutButtonForm">
+                <button id="logoutButton">Log Out</button>
+            </form>
+        </div>
 
-{{/project}}
+        <h1>Project Details</h1>
 
-<a href='/profile'>Profile</a>
+        {{#project}}
+
+        {{name}}
+        {{description}}
+        {{status}}
+
+
+        <form method="POST" action="../update-project">
+            <input type="hidden" value={{id}} name="projectId" />
+            <p> </p>
+            <button>Update</button>
+        </form>
+
+        <form method="POST" action="../delete-project">
+            <input type="hidden" value={{id}} name="projectId" />
+            <p> </p>
+            <button onclick="if (!confirm('Are you sure you want to delete this project?')) { return false }">Delete</button>
+        </form>
+
+        {{/project}}
+
+
+    </body>
+
+</html>
 

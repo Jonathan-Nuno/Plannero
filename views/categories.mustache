@@ -1,11 +1,24 @@
 <html>
 
         <head>
-
-          <link rel="stylesheet" type="text/css" href="/../../css/styles.css" />
+                <link rel="stylesheet" type="text/css" href="/../../css/styles.css" />
+                <link rel="stylesheet" type="text/css" href="/../../css/category-styles.css" />
         </head>
 
         <body>
+                
+                <div id='header'>
+            
+                        <div id='logo'>
+                                <a href='/profile' class='profileAnchor'> <label id='mainText'>plannero</label></a>
+                                <label id='subText'>keeping you on track</label>
+                        </div>
+            
+                        <form method="POST" action="/logout" id="logoutButtonForm">
+                                <button id="logoutButton">Log Out</button>
+                                </form>
+                </div>
+                
                 <div class="allMainContent">
                         <h1> {{spaceCat}} </h1>
                                 
@@ -21,7 +34,8 @@
                 </div>
 
                 <footer>
-                <a href='/profile'>Profile</a>
+                        <p>© 2020 / / plannero</p>
+                        <a href='/about-us'>About Us</a>
                 </footer>
         </body>
 

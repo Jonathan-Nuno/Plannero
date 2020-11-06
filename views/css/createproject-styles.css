@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: Hanzipen;
     src: url('hanzipen-tc-regular.otf');
@@ -80,49 +79,40 @@ body {
 
 }
 
-a #createProjectButton {
-    font-size:430px;
-
-}
-
-/* .showallForm {
-    justify-content: right;
-} */
-
-.showallButton {
-float: right;}
-
 h1 {
-    font-family: Avenir;
     color: white;
-    font-size: 75px;
+    font-family: Avenir;
 
 }
 
-h2 {
-    font-family: Avenir;
-    color: white;
-
-
+.formdetail {
+    justify-content: center;
 }
 
-h3 {
+input {
+    width: 400px;
+    border: rgb(165, 167, 170);
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
     font-family: Avenir;
+}
+
+textarea {
+    font-family: Avenir;
+    width: 400px;
+    border: rgb(165, 167, 170);
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+
 }
 
 p {
     font-family: Avenir;
 }
 
-hr {
-    color: rgb(180, 185, 192);
-    width: 90%;
-    
-}
 
-#plantodoDiv {
-    margin-bottom: 100px;
-}
 
 footer {
     display: flex;
@@ -140,79 +130,4 @@ footer a {
     color: white;
     text-decoration: none;
     cursor: pointer;
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 768px){
-
-    #header {
-        background-color: rgb(144, 159, 179);
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        margin: 0;
-        margin-top: 0;
-
-    }
-
-    #mainText {
-        color: rgb(1, 77, 128);
-        margin-left: 250px;
-    }
-
-    #subText {
-        display: none;
-    }
-
-    #logoutButton {
-        margin-right: 10px;
-        font-size: 30px;
-    }
-
-    #createProjectButton button{
-        font-size: 30px;
-    
-    }
- 
-    .content {
-        height: 300px;
-        width: 800px;
-    }
-
-    div.card {
-        width: 200px;
-        height: 200px;
-        margin: 10px 5px 5px 5px;
-    }
-
-    .projectDetails {
-        height: 134px;
-        width: 100%;
-        margin: 5px 5px 5px 5px;
-    }
-
-    h2 {
-        font-size: 40px;
-    }
-
-    h3 {
-        font-size: 30px;
-        max-width: 100%;
-        padding-top: 20px;
-
-    }
-
-    p {
-        font-size: 20px;
-    } 
-
-    #plantodoDiv {
-        margin-bottom: 100px;
-    }
-
-    .showallButton {
-        font-size: 30px;
-        padding: 15px;
-    }
-
-
 }

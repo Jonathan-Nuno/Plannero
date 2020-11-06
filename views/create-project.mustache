@@ -2,10 +2,24 @@
     <head>
 
         <link rel="stylesheet" type="text/css" href="/../css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="/../css/createproject-styles.css" />
 
     </head>
 
     <body>
+        
+        <div id='header'>
+            
+            <div id='logo'>
+                <a href='/profile' class='profileAnchor'> <label id='mainText'>plannero</label></a>
+                <label id='subText'>keeping you on track</label>
+            </div>
+            
+            <form method="POST" action="/logout" id="logoutButtonForm">
+                <button id="logoutButton">Log Out</button>
+            </form>
+        </div>
+        
         <div class="singleDetailContent">
             <h1 class="singleTitle">Enter Project Details</h1>
 
@@ -13,14 +27,14 @@
                 <form class="formDetail" method="POST" action="./project-details">
                     <ul class="ulDetail">
                         <label class="labelDetail">
-                            <p class="pDetails">Project Name: </p><input type="text" name="projectName" placeholder="Project Name" required >
+                            <!-- <p class="pDetails"></p> --><input type="text" name="projectName" placeholder="Project Name" required >
                         </label>
 
                         <label class="labelDetail">
-                            <p class="pDetails">Project Description: </p><textarea type="text" name="projectDescription" placeholder="Project Description" required ></textarea>
+                            <!--<p class="pDetails"></p>--><textarea type="text" name="projectDescription" placeholder="Project Description" required ></textarea>
                         </label>
 
-                        <label class="labelDetail" for="projectStatus"><p class="pDetails">Choose a Status: </p>
+                        <label class="labelDetail" for="projectStatus"><!--<p class="pDetails"></p>-->
                             <select name="projectStatus" id="projectStatus">
                             <option value="Plan_to_do">Plan To Do</option>
                             <option value="Working_on">Working On</option>
@@ -28,10 +42,15 @@
                             </select>
                         </label>
                     </ul>
-                    <button class="singleButton">Submit</button>
+                    <button class="singleButton">Create</button>
                 </form>
             </div>
         </div>
+
+         <footer>
+                <p>© 2020 / / plannero</p>
+                <a href='/about-us'>About Us</a>
+        </footer>
     </body>
 
 

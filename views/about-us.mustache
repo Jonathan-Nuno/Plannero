@@ -12,8 +12,18 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-        <header>
-            <p>Plannero</p></header>
+        
+         <div id='header'>
+            
+            <div id='logo'>
+                <a href='/profile' class='profileAnchor'> <label id='mainText'>plannero</label></a>
+                <label id='subText'>keeping you on track</label>
+            </div>
+            
+            <form method="POST" action="/logout" id="logoutButtonForm">
+                <button id="logoutButton">Log Out</button>
+            </form>
+        </div>
         
         <section id="team" class="pb-5">
             <div class="container">
@@ -103,7 +113,7 @@
                                     <div class="card">
                                         <div class="card-body text-center mt-4">
                                             <h4 class="card-title">William Foody</h4>
-                                            <p class="card-text">Music enthusiast turned passionate software programer looking create leading-edge application</p>
+                                            <p class="card-text">Software Developer, composer, musician.</p>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
                                                     <a class="social-icon text-xs-center" target="_blank" href="https://github.com/wfoody">
