@@ -74,3 +74,35 @@ body {
     color: rgb(117, 200, 255); 
 
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 575px){
+
+
+    #mainText {
+        color: white;
+        font-size: 80px;
+    }
+    
+    #subtext {
+        font-size: 20px;
+    }
+        
+    
+    #logoutButton {
+        margin-right: 10px;
+        font-size: 20px;
+        width: 150px;
+    }
+    
+    
+
+    body {
+        width: fit-content;
+
+    }
+
+
+    #team {
+        justify-self: center;
+    }
+}

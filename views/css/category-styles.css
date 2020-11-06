@@ -102,6 +102,13 @@ p {
     font-family: Avenir;
 }
 
+hr {
+    width: 100%;
+    background-color: rgb(129, 134, 139);
+    color: rgb(140, 147, 155);
+
+}
+
 footer {
     display: flex;
     justify-content: center;
@@ -118,4 +125,24 @@ footer a {
     color: white;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px){
+
+    #mainText {
+        color: white;
+        font-size: 80px;
+    }
+
+    #subtext {
+        font-size: 20px;
+    }
+    
+
+    #logoutButton {
+        margin-right: 10px;
+        font-size: 40px;
+    }
+
+
 }

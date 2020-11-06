@@ -16,6 +16,8 @@ button {
     padding: 10px;
     border: none;
     border-radius: 10px;
+    font-size: 20px;
+
 }
 
 button:hover {
@@ -82,12 +84,19 @@ body {
 h1 {
     color: white;
     font-family: Avenir;
-
+    font-size: 50px;
+    margin-right: 50px;
 }
 
-.formdetail {
+form.formdetail {
     justify-content: center;
+    padding: 20px;
+    width: 100%;
 }
+
+/* div.singledetailcontent {
+    text-align: center;
+} */
 
 input {
     width: 400px;
@@ -96,6 +105,10 @@ input {
     border-radius: 5px;
     border-width: 1px;
     font-family: Avenir;
+    margin: 10px 20px 10px 20px;
+    padding: 10px;
+    font-size: 20px;
+    justify-self: center;
 }
 
 textarea {
@@ -105,8 +118,29 @@ textarea {
     border-style: solid;
     border-radius: 5px;
     border-width: 1px;
+    margin: 10px 20px 10px 20px;
+    padding: 10px;
+    font-size: 20px;
+    justify-self: center;
 
 }
+
+label.labeldetail {
+    width: 94%;
+}
+
+#projectStatus {
+    font-family: Avenir;
+    padding: 10px;
+    margin: 10px 10px 0px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    justify-self: center;
+    width: 400px;
+
+}
+
+
 
 p {
     font-family: Avenir;
@@ -130,4 +164,24 @@ footer a {
     color: white;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px){
+
+    #mainText {
+        color: white;
+        font-size: 80px;
+    }
+
+    #subtext {
+        font-size: 20px;
+    }
+    
+
+    #logoutButton {
+        margin-right: 10px;
+        font-size: 40px;
+    }
+
+
 }
