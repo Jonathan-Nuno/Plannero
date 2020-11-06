@@ -4,7 +4,7 @@ const models = require('./models')
 const mustacheExpress = require('mustache-express')
 var bcrypt = require('bcryptjs')
 require('dotenv').config()
-const PORT = process.env.PORT_NUMBER
+const PORT = process.env.PORT_NUMBER || 8080
 const session = require('express-session')
 const profileRouter = require('./routes/profile')
 const Str = require('@supercharge/strings')
