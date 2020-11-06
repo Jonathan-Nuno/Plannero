@@ -1,9 +1,15 @@
 
     
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-#team {
+/* #team {
     background: #eee !important;
+} */
+
+@font-face {
+    font-family: Avenir;
+    src: url('AvenirLTStd-Roman.otf') format('truetype');
 }
+
 body { 
     background-color: rgb(1, 77, 128);
     height: 100%;
@@ -31,7 +37,7 @@ header p {
     font-family: 'Vidaloka', serif;
 }
 footer {
-    background-color: rgba(255,255,255, 0.1);
+    /* background-color: rgba(255,255,255, 0.1); */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -43,15 +49,15 @@ a {
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: #108d6f;
-    border-color: #108d6f;
+    background-color: rgb(9, 134, 206);
+    border-color: rgb(9, 134, 206);
     box-shadow: none;
     outline: none;
 }
 
 .btn-primary {color: #fff;
-    background-color: #007b5e;
-    border-color: #007b5e;
+    background-color: rgb(0, 162, 254);
+    border-color: rgb(0, 162, 254);
 }
 
 section {
@@ -60,14 +66,18 @@ section {
 
 section .section-title {
     text-align: center;
-    color: #007b5e;
+    color: white;
     margin-bottom: 50px;
     text-transform: uppercase;
+    font-family: Avenir;
 }
 
 #team .card {
     border: none;
     background: #ffffff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px, rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+
 }
 
 .image-flip:hover .backside,
@@ -149,12 +159,18 @@ section .section-title {
 
 .backside .card a {
     font-size: 18px;
-    color: #007b5e !important;
+    color: black !important;
+    font-family: Avenir;
+    font-weight: bold;
+
 }
 
 .frontside .card .card-title,
 .backside .card .card-title {
-    color: #007b5e !important;
+    color: black !important;
+    font-family: Avenir;
+    font-weight: bold;
+
 }
 
 .frontside .card .card-body img {
@@ -165,7 +181,10 @@ section .section-title {
 
 .frontside .card .card-text{
     font-size: 20px;
-    font-weight: bold;
+    /* font-weight: bold; */
+    color: rgb(97, 102, 110);
+    font-family: Avenir;
+
 }
 
 @media (min-width: 300px) and (max-width: 461px) {

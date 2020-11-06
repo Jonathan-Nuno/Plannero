@@ -3,19 +3,13 @@
     <head>
 
         <link rel="stylesheet" type="text/css" href="/../../css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="/../../css/projectdetails-styles.css" />
+
     </head>
     
     <body>
-        <div class="singleDetailContent">
-            {{#project}}
-            <h1 class="singleTitle">{{name}}</h1>
 
-            <div class="singleBox">
-                <div class="detailsBox">
-                    <textarea class="detailsTextArea" readonly>{{description}}</textarea>
-                    <label class="detailsLabel"><p>Project Status: {{statusText}}</p></label>
-
-        <div id='header'>
+     <div id='header'>
             
             <div id='logo'>
                 <a href='/profile' class='profileAnchor'> <label id='mainText'>plannero</label></a>
@@ -27,17 +21,27 @@
             </form>
         </div>
 
+        <div class="singleDetailContent">
+            {{#project}}
+            <h1 class="singleTitle">{{name}}</h1>
 
-                    <form method="POST" action="../update-project">
-                    <input type="hidden" value={{id}} name="projectId" />
-                    <button class="detailsButton">Update Project?</button>
-                    </form>
+            <div class="singleBox">
+                <div class="detailsBox">
+                    <textarea class="detailsTextArea" readonly>{{description}}</textarea>
+                    <label class="detailsLabel"><p>Project Status: {{statusText}}</p></label>
+
+                    <div id='buttons'>
+                        <form method="POST" action="../update-project">
+                        <input type="hidden" value={{id}} name="projectId" />
+                        <button class="detailsButton">Update Project</button>
+                        </form>
 
 
-                    <form method="POST" action="../delete-project">
-                    <input type="hidden" value={{id}} name="projectId" />
-                    <button class="detailsButton" onclick="if (!confirm('Are you sure you want to delete this project?')) { return false }">Delete Project?</button>
-                    </form>
+                        <form method="POST" action="../delete-project">
+                        <input type="hidden" value={{id}} name="projectId" />
+                        <button class="detailsButton" onclick="if (!confirm('Are you sure you want to delete this project?')) { return false }">Delete Project</button>
+                        </form>
+                    </div>   
                 </div>
 
                 
@@ -46,6 +50,11 @@
 
             {{/project}}
         </div>
+
+        <footer>
+                <p>© 2020 / / plannero</p>
+                <a href='/about-us'>About Us</a>
+        </footer>
 
     </body>
 

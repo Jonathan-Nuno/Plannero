@@ -17,6 +17,7 @@ button {
     padding: 10px;
     border: none;
     border-radius: 10px;
+    font-size: 20px;
 }
 
 button:hover {
@@ -80,8 +81,8 @@ body {
 
 }
 
-a #createProjectButton {
-    font-size:430px;
+#createProjectButton {
+    font-size: 30px;
 
 }
 
@@ -144,28 +145,28 @@ footer a {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px){
 
-    #header {
-        background-color: rgb(144, 159, 179);
+    /* #header {
         align-items: center;
         text-align: center;
         padding: 20px;
         margin: 0;
         margin-top: 0;
 
-    }
+    } */
 
     #mainText {
-        color: rgb(1, 77, 128);
-        margin-left: 250px;
+        color: white;
+        font-size: 80px;
     }
 
-    #subText {
-        display: none;
+    #subtext {
+        font-size: 20px;
     }
+    
 
     #logoutButton {
         margin-right: 10px;
-        font-size: 30px;
+        font-size: 40px;
     }
 
     #createProjectButton button{

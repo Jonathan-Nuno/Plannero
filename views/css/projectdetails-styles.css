@@ -79,71 +79,26 @@ body {
 
 }
 
-/* .formdetail {
+h1 {
+    font-family: Avenir;
+    color: white;
+    margin-bottom: 0;
+}
 
-} */
-
-.updateElements {
-    display: flex;
-    justify-content: first baseline;
-
+textarea {
+    font-family: Avenir;
+    padding: 10px;
+   font-size: 15px;
 }
 
 p {
     font-family: Avenir;
 }
 
-input {
-    font-family: Avenir;
-    border-radius: 5px;
-    border: rgb(155, 160, 173);
-    border-width: 1px;
-    border-style: solid;
-    margin: 0 10px 10px 10px;
-    padding: 10px;
-    width: 100%;
-    font-size: 15px;
-}
-
-textarea {
-    font-family: Avenir;
-    border-radius: 5px;
-    border: rgb(155, 160, 173);
-    border-width: 1px;
-    border-style: solid;
-    margin: 0 10px 10px 10px;
-    padding: 10px;
-    width: 100%;
-    font-size: 15px;
-
-}
-
-#projectStatus {
-    font-family: Avenir;
-    border-radius: 5px;
-    border: rgb(155, 160, 173);
-    border-width: 1px;
-    border-style: solid;
-    margin: 0 10px 10px 10px;
-    padding: 10px;
-    width: 100%;
-
-}
-
-/* .singleDetailContent {
-    justify-content: center;
-    width: 800px;
-    height: 300px;
-} */
-
-.formdetail {
-    justify-self: center;
-}
-
-h1 {
-    font-family: Avenir;
-    color: white;
-    margin-bottom: 0;
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
 }
 
 footer {

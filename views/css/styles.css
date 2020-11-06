@@ -34,6 +34,7 @@ ul {
     margin-left: 0;
     list-style-type: none;
     padding-left: 30px;
+    padding-right: 30px;
 }
 .projectDetails {
     height: 134px;
@@ -62,9 +63,9 @@ h3 {
     margin: 1px;
 }
 .cUTextArea {
-    max-width: 200px;
+    /* max-width: 200px;
     min-width: 180px;
-    width: 180px;
+    width: 180px; */
     max-height: 250px;
     min-height: 100px;
     height: 100px;
@@ -128,19 +129,23 @@ h3 {
 /* Create-Project & Update-Project CSS */
 
 .singleDetailContent, .singleTitle {
-    display: grid;
-    place-items: center;
+    display: flex;
     width: 75%;
+    flex-direction: column;
+    align-items: center;
 }
 .formDetail {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .ulDetail {
     display: grid;
     list-style-type: none;
     width: 100%;
+    justify-content: initial;
 }
+
 .singleButton {
     width: 25%;
 }
@@ -148,23 +153,26 @@ h3 {
     display: grid;
     grid-auto-flow: column;
     width: 50%;
+    margin-left: -20px;
 }
 .pDetails {
     margin: 0px;
-    width: 130px;
+    /* width: 130px; */
 }
 .singleBox {
-    display: grid;
-    width: 50%;
+    display: flex;
+    width: 400px;
     border-width: initial;
     border-style: none;
     border-color: initial;
-    margin: 5% 5% 5% 0px;
+    margin: 2% 0px 5% 0px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px, rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
     white-space: nowrap;
-    padding-left: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
     background-color: whitesmoke;
+    justify-content: center;
 }
 
 /* Project-Details */
@@ -172,14 +180,15 @@ h3 {
 /* Project-Details */
 
 .detailsBox {
-    display: grid;
-    place-items: center ;
-    margin: 10px 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 5px 5px 5px;
+    align-items: center;
 }
 .detailsTextArea {
-    max-width: 340;
+    max-width: 400;
     min-width: 100px;
-    width: 150px;
+    width: 400px;
     max-height: 400px;
     min-height: 100px;
     height: 100px;
@@ -189,6 +198,7 @@ h3 {
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px, rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
     background-color: whitesmoke;
+    margin: 10px;
 }
 .detailsLabel {
     display: grid;
