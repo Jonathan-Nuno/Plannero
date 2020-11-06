@@ -136,6 +136,7 @@ textarea {
 .labelDetail {
     display: grid;
     grid-auto-flow: column;
+    width: 50%;
 }
 .pDetails {
     margin: 0px;
