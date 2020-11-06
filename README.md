@@ -15,15 +15,15 @@
 
 ## About the Project
 
-- For people who are passionate about creating new and intersesting projects, keeping track of everything can be a real pain. We aimed to develop a site that would make that task a lof easier. With Plannero, you will never have to stress about organizing your projects ever again. 
+- For people who are passionate about creating new and interesting projects, keeping track of everything can be a real pain. We aimed to develop a site that would make that task a lot easier. With Plannero, you will never have to stress about organizing your projects ever again. 
 
 ## Usage
 
-- Plannero allows you to register and log into a personal account or to test out the site by loging in as a guest. Once in, you will have the ability create a new project, view your projects filtered by status, view details for an existing project, update an existing project, and delete a project.
+- Plannero allows you to register and log into a personal account or to test out the site by logging in as a guest. Once in, you will have the ability to create a new project, view your projects filtered by status, view details for an existing project, update an existing project, and delete a project.
 
 ## Videos and Screenshots
 
-<img src="views/images/planneropage.png" width=900 height=600>
+<img src="views/images/planneropage.png">
 
 ## Getting Started
 - To begin using the site, you can register a new account, log into an existing account, or browse the site with a guest account. 
