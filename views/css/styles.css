@@ -111,7 +111,7 @@ h3 {
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px, rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
     white-space: nowrap;
-    padding-left: 0px;
+    padding-left: 10px 10px 10px 10px;
     background-color: whitesmoke;
 
 }

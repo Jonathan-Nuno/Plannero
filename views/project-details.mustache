@@ -1,4 +1,5 @@
 <html>
+
     <head>
 
         <link rel="stylesheet" type="text/css" href="/../../css/styles.css" />
@@ -13,6 +14,18 @@
                 <div class="detailsBox">
                     <textarea class="detailsTextArea" readonly>{{description}}</textarea>
                     <label class="detailsLabel"><p>Project Status: {{statusText}}</p></label>
+
+        <div id='header'>
+            
+            <div id='logo'>
+                <a href='/profile' class='profileAnchor'> <label id='mainText'>plannero</label></a>
+                <label id='subText'>keeping you on track</label>
+            </div>
+            
+            <form method="POST" action="/logout" id="logoutButtonForm">
+                <button id="logoutButton">Log Out</button>
+            </form>
+        </div>
 
 
                     <form method="POST" action="../update-project">

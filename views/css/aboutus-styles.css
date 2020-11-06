@@ -1,0 +1,76 @@
+@font-face {
+    font-family: Hanzipen;
+    src: url('hanzipen-tc-regular.otf');
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url('AvenirLTStd-Roman.otf') format('truetype');
+}
+
+button {
+    cursor: pointer;
+    font-family: Avenir;
+    background-color: rgb(0, 162, 254);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.profileAnchor {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a label {
+    cursor: pointer;
+}
+
+
+body {
+    padding: 0px;
+}
+
+
+#header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 100px;
+}
+
+#logoutButtonForm {
+    justify-self: right;
+    margin-right: 100px;
+    margin-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+#logoutButton {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+}
+
+#mainText {
+    font-family: Hanzipen;
+    font-size: 60px;
+    color: white;
+}
+
+#subText {
+    font-family: Avenir;
+    color: white;
+    color: rgb(117, 200, 255); 
+
+}

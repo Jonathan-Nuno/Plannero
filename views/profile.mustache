@@ -11,7 +11,7 @@
         <div id='header'>
             
             <div id='logo'>
-                <label id='mainText'>plannero</label>
+                <a href='/profile' class='profileAnchor'> <label id='mainText'>plannero</label></a>
                 <label id='subText'>keeping you on track</label>
             </div>
             
@@ -22,8 +22,8 @@
 
 
    
-    <h1>Hello, {{displayName}}!</h1>
-    <a href="/profile/create-project"><button>Create Project</button></a>
+        <h1>Hello, {{displayName}}!</h1>
+        <a href="/profile/create-project" id='createProjectButton'><button>Create Project</button></a>
  
 
 
@@ -35,7 +35,7 @@
                     {{#completedProjects}}
                     <a class="projectDetails" href= 'profile/project-details/{{id}}'><div class="card">
                     <h3>{{name}}</h3>
-                    
+                    <hr>
                     <p class="profilePText">{{description}}</p>
                     </div></a>
                     {{/completedProjects}}
@@ -55,7 +55,7 @@
                     {{#workingOnProjects}}
                     <a class="projectDetails" href= 'profile/project-details/{{id}}'><div class="card">
                     <h3>{{name}}</h3>
-                    
+                    <hr>
                     <p class="profilePText">{{description}}</p>
                     </div></a>
                     {{/workingOnProjects}}
@@ -73,8 +73,8 @@
                 <ul>
                     {{#planToDoProjects}}
                     <a class="projectDetails" href= 'profile/project-details/{{id}}'><div class="card">
-                   <h3>{{name}}</h3>
-                    
+                    <h3>{{name}}</h3>
+                    <hr>
                     <p class="profilePText">{{description}}</p>
                     </div></a>
                     {{/planToDoProjects}}
@@ -86,9 +86,10 @@
             </form>
         </div>
 
-       <footer>
-         <a href="/about-us">About Us</a>
-       </footer>
+        <footer>
+            <p>© 2020 / / plannero</p>
+            <a href='/about-us'>About Us</a>
+        </footer>     
    </body>
 
 
