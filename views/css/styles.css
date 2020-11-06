@@ -61,8 +61,12 @@ h3 {
     overflow: hidden;
     margin: 1px;
 }
-textarea {
+.cUTextArea {
+    max-width: 200px;
+    min-width: 180px;
     width: 180px;
+    max-height: 250px;
+    min-height: 100px;
     height: 100px;
 }
 
@@ -161,4 +165,51 @@ textarea {
     white-space: nowrap;
     padding-left: 0px;
     background-color: whitesmoke;
+}
+
+/* Project-Details */
+/* Project-Details */
+/* Project-Details */
+
+.detailsBox {
+    display: grid;
+    place-items: center ;
+    margin: 10px 5px 5px 5px;
+}
+.detailsTextArea {
+    max-width: 340;
+    min-width: 100px;
+    width: 150px;
+    max-height: 400px;
+    min-height: 100px;
+    height: 100px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px, rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+    background-color: whitesmoke;
+}
+.detailsLabel {
+    display: grid;
+    grid-auto-flow: column;
+}
+.detailsButton {
+    pointer-events: all;
+}
+.detailsButton:link {
+    text-decoration: none;
+    color: black;
+}
+.detailsButton:visited {
+    text-decoration: none;
+    color: black;
+}
+.detailsButton:hover {
+    text-decoration: underline;
+    color: black;
+}
+.detailsButton:active {
+    text-decoration: underline;
+    color: black;
 }
