@@ -137,4 +137,44 @@ footer a {
     }
 
 
+    div.singlebox {
+        width: 700px;
+        height: 500px;
+
+    }
+
+    /* textarea {
+        width: 800px;
+        height: 100px;
+        font-size: 40px;
+
+    } */
+
+    .detailsTextArea {
+        width: 700px;
+        height: 300px;
+        font-size: 40px;
+        max-width: 700px;
+        max-height: 1000px;
+    }
+
+    p {
+        font-size: 40px;
+    }
+
+    .detailsButton {
+        font-size: 40px;
+        padding: 20px;
+        width: 400px;
+    }
+
+    #buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
 }
