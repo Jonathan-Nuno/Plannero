@@ -1,25 +1,40 @@
-<h1>Project Details</h1>
+<html>
+    <head>
 
-{{#project}}
+        <link rel="stylesheet" type="text/css" href="/../../css/styles.css" />
+    </head>
+    
+    <body>
+        <div class="singleDetailContent">
+            {{#project}}
+            <h1 class="singleTitle">{{name}}</h1>
 
-{{name}}
-{{description}}
-{{status}}
+            <div class="singleBox">
+                <div class="detailsBox">
+                    <textarea class="detailsTextArea" readonly>{{description}}</textarea>
+                    <label class="detailsLabel"><p>Project Status: {{statusText}}</p></label>
 
 
-<form method="POST" action="../update-project">
- <input type="hidden" value={{id}} name="projectId" />
- <p> </p>
- <button>Update</button>
-</form>
+                    <form method="POST" action="../update-project">
+                    <input type="hidden" value={{id}} name="projectId" />
+                    <button class="detailsButton">Update Project?</button>
+                    </form>
 
-<form method="POST" action="../delete-project">
- <input type="hidden" value={{id}} name="projectId" />
- <p> </p>
- <button onclick="if (!confirm('Are you sure you want to delete this project?')) { return false }">Delete</button>
-</form>
 
-{{/project}}
+                    <form method="POST" action="../delete-project">
+                    <input type="hidden" value={{id}} name="projectId" />
+                    <button class="detailsButton" onclick="if (!confirm('Are you sure you want to delete this project?')) { return false }">Delete Project?</button>
+                    </form>
+                </div>
 
-<a href='/profile'>Profile</a>
+                
+
+            </div>
+
+            {{/project}}
+        </div>
+
+    </body>
+
+</html>
 
