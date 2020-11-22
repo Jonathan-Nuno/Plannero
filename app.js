@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 8080
 const session = require('express-session')
 const profileRouter = require('./routes/profile')
 const Str = require('@supercharge/strings')
+const compression = require('compression')
 
 
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded())
 app.engine('mustache', mustacheExpress())
 app.set('views', './views')
 app.set('view engine', 'mustache')
+app.use(compression())
 app.use(express.static('views'))
 
 app.use(session({
