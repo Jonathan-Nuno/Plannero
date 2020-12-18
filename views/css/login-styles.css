@@ -1,8 +1,8 @@
-
 @font-face {
-    font-family: Hanzipen;
-    src: url('hanzipen-tc-regular.otf');
+    font-family: Michelle ;
+    src: url('michelle_lazy_hand.ttf');
 }
+
 
 @font-face {
     font-family: Avenir;
@@ -28,7 +28,7 @@ body {
 }
 
 h1 {
-    font-family: Hanzipen;
+    font-family: Michelle;
     color: white;
     font-size: 100px;
     margin-bottom: 0;
